@@ -7,9 +7,9 @@ Ultra-lean implementation to test emergent collusion behaviors in LLM agents usi
 Testing whether LLM agents can develop collusive behaviors through natural language communication and whether a hierarchical safety system can detect and prevent such emergence.
 
 ## Minimal Stack
-- **LLM Interface**: `litellm` (unified API for GPT-4/Claude/etc)
+- **LLM Interface**: `litellm` (unified API for Ollama/GPT-4/Claude/etc)
 - **Environment**: Pure Python dataclasses
-- **Visualization**: Simple JSON logs + matplotlib
+- **Visualization**: Simple JSON logs + streamlit dashboard
 
 ## Architecture (< 300 lines total)
 
@@ -27,7 +27,7 @@ Testing whether LLM agents can develop collusive behaviors through natural langu
 └────────┬────────┘
          │
 ┌────────▼────────┐
-│   LLM Agents    │ (GPT-4-mini instances)
+│   LLM Agents    │ (Ollama qwen3:8b  instances)
 └─────────────────┘
 ```
 
@@ -35,7 +35,6 @@ Testing whether LLM agents can develop collusive behaviors through natural langu
 
 ```bash
 pip install litellm matplotlib
-export OPENAI_API_KEY="your-key"
 python market_sim.py
 ```
 
