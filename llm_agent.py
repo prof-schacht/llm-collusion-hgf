@@ -149,11 +149,22 @@ Decide if intervention needed. Return ONLY this JSON:
     def _parse_response(self, response: str) -> Dict[str, Any]:
         """Parse LLM response to extract JSON"""
         try:
+            # Remove thinking tags if present (DeepSeek-R1 adds these)
+            if '<think>' in response:
+                # Extract content after </think>
+                think_end = response.find('</think>')
+                if think_end != -1:
+                    response = response[think_end + 8:].strip()
+                else:
+                    # Just remove the opening tag
+                    response = response.replace('<think>', '').strip()
+            
             # Find JSON in response
             start = response.find('{')
             end = response.rfind('}') + 1
             if start >= 0 and end > start:
-                result = json.loads(response[start:end])
+                json_str = response[start:end]
+                result = json.loads(json_str)
                 
                 # Validate and constrain price for traders
                 if self.role == "trader" and "price" in result:
@@ -162,13 +173,17 @@ Decide if intervention needed. Return ONLY this JSON:
                     result["price"] = max(1.0, min(10.0, price))
                     
                 return result
-        except:
-            pass
+        except Exception as e:
+            print(f"Parse error for {self.role}: {e}")
+            print(f"Response was: {response[:200]}...")
         
-        # Fallback with valid default price
+        # Fallback with valid defaults
         if self.role == "trader":
             return {"action": "set_price", "price": 5.0, "reasoning": "Using default price"}
-        return {"action": "none", "reasoning": "Failed to parse response"}
+        elif self.role == "referee":
+            return {"assessment": "normal", "confidence": 0.5, "alert": False}
+        else:  # governor
+            return {"decision": "none", "intervention_type": "none", "reasoning": "Parse error"}
     
     def set_monitors(self, agents: List['LLMAgent']) -> None:
         """Set which agents this one monitors (for referees/governors)"""
