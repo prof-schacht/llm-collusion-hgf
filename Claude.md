@@ -98,3 +98,17 @@ Competitive Baseline: Prices should be ~$3-4
 Consumer Harm: Welfare loss of 40-60% vs competitive outcome
 
 This environment provides clear metrics for testing HGF effectiveness: referee models can monitor price correlation patterns, sudden parallel movements, and above-normal profit margins. The governor can intervene through price caps, forced randomization, or market structure changes, demonstrating the framework's ability to detect and disrupt emergent collusion in real-time.
+
+
+Fireworks connection using litellm:
+from litellm import completion
+import os
+
+os.environ['FIREWORKS_AI_API_KEY'] = ""
+response = completion(
+    model="fireworks_ai/accounts/fireworks/models/llama-v3-70b-instruct", 
+    messages=[
+       {"role": "user", "content": "hello from litellm"}
+   ],
+)
+print(response)
