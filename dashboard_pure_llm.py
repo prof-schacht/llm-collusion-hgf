@@ -48,11 +48,24 @@ with st.sidebar:
     if st.button("🚀 Start Simulation", type="primary"):
         st.session_state.running = True
         st.session_state.round = 0
-        st.session_state.orchestrator = MarketOrchestrator(
+        
+        # Create orchestrator
+        orchestrator = MarketOrchestrator(
             n_traders=n_traders,
             n_referees=n_referees,
             has_governor=has_governor
         )
+        
+        # Override model if custom selected
+        if model_option == "Ollama (Local)":
+            st.warning("Note: Using Ollama requires local setup")
+            for agent in orchestrator.agents.values():
+                agent.model = "ollama/qwen3:8b"
+        elif model_option == "Custom" and custom_model:
+            for agent in orchestrator.agents.values():
+                agent.model = custom_model
+                
+        st.session_state.orchestrator = orchestrator
         st.session_state.history = {
             'rounds': [],
             'prices': [],
@@ -101,8 +114,13 @@ else:
         orchestrator = st.session_state.orchestrator
         
         with st.spinner(f"Running round {st.session_state.round + 1}/{n_rounds}..."):
-            round_data = orchestrator.run_round()
-            st.session_state.history['rounds'].append(round_data)
+            try:
+                round_data = orchestrator.run_round()
+                st.session_state.history['rounds'].append(round_data)
+            except Exception as e:
+                st.error(f"Error in round: {e}")
+                st.session_state.running = False
+                st.stop()
             
             # Extract data for visualization
             market_state = orchestrator.market.get_state()
@@ -201,8 +219,8 @@ else:
     
     # Agent Thoughts (Advanced View)
     with st.expander("🧠 Agent Thoughts (Advanced)"):
-        if st.session_state.round > 0:
-            conversations = orchestrator.get_conversation_log()
+        if st.session_state.round > 0 and 'orchestrator' in st.session_state:
+            conversations = st.session_state.orchestrator.get_conversation_log()
             
             tabs = st.tabs([agent['agent'] for agent in conversations if agent['thoughts']])
             
@@ -235,7 +253,7 @@ else:
                     'timestamp': datetime.now().isoformat()
                 },
                 'history': st.session_state.history,
-                'final_state': orchestrator.market.get_state()
+                'final_state': st.session_state.orchestrator.market.get_state() if 'orchestrator' in st.session_state else {}
             }
             
             with open(filename, 'w') as f:
