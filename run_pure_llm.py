@@ -48,8 +48,10 @@ def run_experiment(n_rounds: int = 10, n_traders: int = 2):
         print("-" * 40)
         
         # Run round
+        print(f"  Running traders...", end='', flush=True)
         round_data = orchestrator.run_round()
         experiment_data['rounds'].append(round_data)
+        print(" done!", flush=True)
         
         # Display summary
         market_state = orchestrator.market.get_state()
@@ -90,10 +92,22 @@ def run_experiment(n_rounds: int = 10, n_traders: int = 2):
 
 if __name__ == "__main__":
     import argparse
+    import asyncio
     
     parser = argparse.ArgumentParser(description='Run pure LLM market simulation')
     parser.add_argument('--rounds', type=int, default=5, help='Number of rounds')
     parser.add_argument('--traders', type=int, default=2, help='Number of traders')
     args = parser.parse_args()
     
-    run_experiment(n_rounds=args.rounds, n_traders=args.traders)
+    try:
+        run_experiment(n_rounds=args.rounds, n_traders=args.traders)
+    except Exception as e:
+        print(f"\nExperiment ended with error: {e}")
+    finally:
+        # Clean up any pending async tasks
+        try:
+            loop = asyncio.get_event_loop()
+            if loop.is_running():
+                loop.stop()
+        except:
+            pass

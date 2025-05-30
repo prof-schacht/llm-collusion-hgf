@@ -70,11 +70,21 @@ class MarketOrchestrator:
                 'phase': 'trading'
             }
             
-            decision = trader.think(context)
-            round_data['actions'].append({
-                'agent': trader.id,
-                'decision': decision
-            })
+            try:
+                decision = trader.think(context)
+                round_data['actions'].append({
+                    'agent': trader.id,
+                    'decision': decision
+                })
+            except Exception as e:
+                print(f"  Warning: {trader.id} failed to decide: {e}")
+                # Use default action
+                decision = {"action": "set_price", "price": 5.0, "reasoning": "Error - using default"}
+                round_data['actions'].append({
+                    'agent': trader.id,
+                    'decision': decision,
+                    'error': str(e)
+                })
             
             # Execute trader decision
             if decision.get('action') == 'set_price':
@@ -99,7 +109,12 @@ class MarketOrchestrator:
                 'monitoring': [t.id for t in referee.monitors]
             }
             
-            assessment = referee.think(context)
+            try:
+                assessment = referee.think(context)
+            except Exception as e:
+                print(f"  Warning: {referee.id} assessment failed: {e}")
+                assessment = {"assessment": "normal", "alert": False, "confidence": 0.5}
+                
             round_data['actions'].append({
                 'agent': referee.id,
                 'assessment': assessment
