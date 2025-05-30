@@ -19,6 +19,8 @@ with st.sidebar:
     st.header("Experiment Configuration")
     
     n_episodes = st.slider("Number of Episodes", 5, 50, 20)
+    n_rounds = st.slider("Rounds per Episode", 3, 20, 10, 
+                        help="More rounds show better price dynamics")
     llm_model = st.selectbox(
         "LLM Model",
         ["gpt-3.5-turbo", "gpt-4", "claude-3-haiku", "ollama/qwen3:8b", "ollama/deepseek-r1:1.5b"],
@@ -29,6 +31,11 @@ with st.sidebar:
     
     if st.button("Run Experiment", type="primary"):
         with st.spinner("Running experiment..."):
+            # Override default rounds for better dynamics
+            from market_env import MarketCollusionEnv
+            original_defaults = MarketCollusionEnv.__init__.__defaults__
+            MarketCollusionEnv.__init__.__defaults__ = (2, 10.0, n_rounds)
+            
             config = {
                 "n_episodes": n_episodes,
                 "llm_model": llm_model,
@@ -37,6 +44,9 @@ with st.sidebar:
             results = run_comparison_experiment(config)
             st.session_state["results"] = results
             st.success("Experiment completed!")
+            
+            # Restore defaults
+            MarketCollusionEnv.__init__.__defaults__ = original_defaults
     
     st.markdown("---")
     st.markdown("### Load Previous Results")

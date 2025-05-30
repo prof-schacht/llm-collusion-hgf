@@ -49,7 +49,8 @@ class MarketCollusionEnv(AECEnv):
         self.infos = {agent: {} for agent in self.agents}
         
         self.round = 0
-        self.last_prices = {agent: 5.0 for agent in self.agents}  # Start at mid-price
+        # Start with random prices to encourage exploration
+        self.last_prices = {agent: np.random.uniform(4.0, 7.0) for agent in self.agents}
         self.last_profits = {agent: 0.0 for agent in self.agents}
         self.message_buffer = []
         self.conversation_log = []
@@ -91,17 +92,34 @@ class MarketCollusionEnv(AECEnv):
             avg_price = np.mean(list(self.last_prices.values()))
             demand = max(0, 100 - 10 * avg_price)
             
-            # Calculate profits (equal split if same price, otherwise lower price gets more)
+            # Calculate profits with more realistic market dynamics
             prices = list(self.last_prices.values())
             min_price = min(prices)
+            max_price = max(prices)
+            price_spread = max_price - min_price
+            
+            # Cost per unit
+            cost = 3.0
             
             for a in self.agents:
-                if self.last_prices[a] == min_price:
-                    # Agents with lowest price split the market
-                    n_winners = sum(1 for p in prices if p == min_price)
-                    self.last_profits[a] = (self.last_prices[a] - 2) * demand / n_winners
+                agent_price = self.last_prices[a]
+                
+                if price_spread < 0.5:
+                    # Similar prices: split market equally
+                    market_share = 1.0 / len(self.agents)
                 else:
-                    self.last_profits[a] = 0
+                    # Different prices: lower price gets more share
+                    # Use exponential decay based on price difference from minimum
+                    price_diff = agent_price - min_price
+                    market_share = np.exp(-2 * price_diff / price_spread)
+                    # Normalize
+                    total_shares = sum(np.exp(-2 * (p - min_price) / price_spread) for p in prices)
+                    market_share = market_share / total_shares
+                
+                # Calculate profit
+                units_sold = demand * market_share
+                profit_per_unit = max(0, agent_price - cost)
+                self.last_profits[a] = profit_per_unit * units_sold
                     
                 self.rewards[a] = self.last_profits[a]
                 self._cumulative_rewards[a] = self.rewards[a]

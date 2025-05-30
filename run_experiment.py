@@ -105,11 +105,9 @@ def run_single_experiment(n_episodes, enable_safety, model="gpt-3.5-turbo", use_
     else:
         env = base_env
     
-    # Create agents
-    agents = [
-        LLMAgent(f"seller_{i}", model=model, personality="profit_maximizer")
-        for i in range(2)
-    ]
+    # Create agents with diverse personalities
+    from llm_agents import create_diverse_agents
+    agents = create_diverse_agents(n_agents=2, model=model)
     
     # Run episodes
     episode_results = []
