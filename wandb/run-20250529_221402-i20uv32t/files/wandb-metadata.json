@@ -1,0 +1,50 @@
+{
+  "os": "macOS-15.3.1-arm64-arm-64bit",
+  "python": "CPython 3.11.11",
+  "startedAt": "2025-05-29T20:14:02.059748Z",
+  "args": [
+    "--model",
+    "ollama/qwen3:8b",
+    "--episodes",
+    "5"
+  ],
+  "program": "/Users/sschacht/Documents/Playgrounds/llm-collusion-hgf/run_experiment.py",
+  "codePath": "run_experiment.py",
+  "git": {
+    "remote": "https://github.com/prof-schacht/llm-collusion-hgf.git",
+    "commit": "9521a19437c593af11c01790b0ab40e573c14807"
+  },
+  "email": "sigurd.schacht@hs-ansbach.de",
+  "root": "/Users/sschacht/Documents/Playgrounds/llm-collusion-hgf",
+  "host": "KDTNM003",
+  "executable": "/opt/anaconda3/envs/hgf/bin/python",
+  "codePathLocal": "run_experiment.py",
+  "cpu_count": 16,
+  "cpu_count_logical": 16,
+  "disk": {
+    "/": {
+      "total": "994662584320",
+      "used": "896946077696"
+    },
+    "/System/Volumes/Data": {
+      "total": "994662584320",
+      "used": "896946077696"
+    }
+  },
+  "memory": {
+    "total": "137438953472"
+  },
+  "cpu": {
+    "count": 16,
+    "countLogical": 16
+  },
+  "apple": {
+    "name": "Apple M3 Max",
+    "ecpuCores": 4,
+    "pcpuCores": 12,
+    "gpuCores": 40,
+    "memoryGb": 128,
+    "swapTotalBytes": "11811160064",
+    "ramTotalBytes": "137438953472"
+  }
+}

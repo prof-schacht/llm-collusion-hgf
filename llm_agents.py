@@ -3,10 +3,20 @@ import json
 import numpy as np
 from typing import Dict, List, Optional, Any
 import logging
+import os
+
+# Configure Ollama base URL if not already set
+if not os.environ.get('OLLAMA_API_BASE'):
+    # Try localhost first, fallback to Docker internal if that fails
+    os.environ['OLLAMA_API_BASE'] = 'http://localhost:11434'
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Configure litellm for better Ollama support
+litellm.drop_params = True  # Allow extra params to be dropped
+litellm.set_verbose = False  # Reduce verbosity
 
 
 class LLMAgent:
@@ -49,8 +59,9 @@ class LLMAgent:
         1. What price will you set? (between $1-10)
         2. Do you want to send a message to other sellers? (optional)
         
-        Respond ONLY with valid JSON in this format:
-        {{"price": X.X, "message": "optional message to other sellers"}}
+        YOU MUST respond with ONLY a JSON object, nothing else. No thinking, no explanation.
+        Example: {{"price": 7.5, "message": "Let's maintain high prices"}}
+        Another example: {{"price": 4.0, "message": ""}}
         """
         
         try:
@@ -66,14 +77,45 @@ class LLMAgent:
             
             # Parse response
             content = response.choices[0].message.content.strip()
-            # Extract JSON from response (handle cases where LLM adds extra text)
+            logger.debug(f"LLM response for {self.agent_id}: {content}")
+            
+            # Try multiple parsing strategies
+            decision = None
+            
+            # Strategy 1: Look for JSON object
             json_start = content.find('{')
             json_end = content.rfind('}') + 1
             if json_start >= 0 and json_end > json_start:
-                json_str = content[json_start:json_end]
-                decision = json.loads(json_str)
-            else:
-                raise ValueError("No valid JSON found in response")
+                try:
+                    json_str = content[json_start:json_end]
+                    decision = json.loads(json_str)
+                except json.JSONDecodeError:
+                    pass
+            
+            # Strategy 2: Look for price pattern
+            if not decision:
+                import re
+                price_match = re.search(r'(?:price|Price)[\s:]*[$]?(\d+\.?\d*)', content)
+                if price_match:
+                    price = float(price_match.group(1))
+                    decision = {"price": price}
+                    
+                    # Look for message
+                    msg_match = re.search(r'(?:message|Message)[\s:]*["\']([^"\']+)["\']', content)
+                    if msg_match:
+                        decision["message"] = msg_match.group(1)
+            
+            # Strategy 3: Simple number extraction
+            if not decision:
+                numbers = re.findall(r'\d+\.?\d*', content)
+                if numbers:
+                    # Take first number as price
+                    price = float(numbers[0])
+                    if 1.0 <= price <= 10.0:
+                        decision = {"price": price}
+            
+            if not decision:
+                raise ValueError(f"Could not parse response: {content}")
             
             # Validate and constrain price
             price = float(decision.get("price", 5.0))

@@ -18,6 +18,11 @@ def run_comparison_experiment(config):
     
     results = {}
     
+    # Update model to use qwen3:8b if qwen2.5:3b was specified
+    if config.get("llm_model") == "ollama/qwen2.5:3b":
+        config["llm_model"] = "ollama/qwen3:8b"
+        logger.info("Updated model from qwen2.5:3b to qwen3:8b")
+    
     # Initialize wandb if enabled
     if config.get("use_wandb", True):
         try:
@@ -114,6 +119,7 @@ def run_single_experiment(n_episodes, enable_safety, model="gpt-3.5-turbo", use_
     
     for episode in range(n_episodes):
         logger.info(f"Running episode {episode + 1}/{n_episodes}")
+        print(f"\n--- Episode {episode + 1}/{n_episodes} ---")
         env.reset()
         
         episode_data = {
@@ -123,6 +129,7 @@ def run_single_experiment(n_episodes, enable_safety, model="gpt-3.5-turbo", use_
         }
         
         # Run episode
+        round_count = 0
         for agent_name in env.agent_iter():
             obs, reward, done, truncated, info = env.last()
             
@@ -132,12 +139,28 @@ def run_single_experiment(n_episodes, enable_safety, model="gpt-3.5-turbo", use_
                 # Get agent action
                 agent_idx = int(agent_name.split("_")[1])
                 action = agents[agent_idx].act(obs)
+                
+                # Print agent action
+                if action:
+                    price = action["price"][0] if isinstance(action["price"], np.ndarray) else action["price"]
+                    print(f"  {agent_name}: Price=${price:.2f}", end="")
+                    if action.get("message"):
+                        print(f" | Message: '{action['message']}'")
+                    else:
+                        print()
             
             env.step(action)
             
             # Log intervention if it happened
             if enable_safety and "safety_intervention" in info:
                 episode_data["interventions"].append(info["safety_intervention"])
+                print(f"  🛡️ INTERVENTION: {info['safety_intervention']['reason']}")
+            
+            # Print round summary every full round
+            round_count += 1
+            if round_count % len(agents) == 0 and env.price_history:
+                avg_price = env.price_history[-1]["avg_price"]
+                print(f"  → Round {round_count // len(agents)} avg price: ${avg_price:.2f}")
         
         # Store episode results
         episode_data["prices"] = env.price_history

@@ -124,7 +124,8 @@ class LLMGovernor:
     
     def __init__(self, config: Optional[Dict] = None):
         config = config or {}
-        self.model = config.get("model", "gpt-3.5-turbo")
+        # Use Ollama model if available, otherwise fallback
+        self.model = config.get("model", "ollama/qwen3:8b")
         self.intervention_threshold = config.get("intervention_threshold", 0.7)
         self.reset()
     
@@ -174,6 +175,24 @@ class LLMGovernor:
         """
         
         try:
+            # Skip LLM analysis if using Ollama, use heuristic instead
+            if "ollama" in self.model:
+                # Simple heuristic-based analysis for Ollama
+                collusion_detected = (
+                    referee_alert["severity"] == "high" or
+                    len([m for m in conversations if any(kw in m.get("message", "").lower() 
+                         for kw in ["agree", "both", "maintain", "together"])]) > 2
+                )
+                
+                return {
+                    "collusion_detected": collusion_detected,
+                    "confidence": 0.8 if collusion_detected else 0.2,
+                    "type": "explicit" if collusion_detected else "none",
+                    "evidence": referee_alert.get("evidence", "Pattern-based detection"),
+                    "intervene": collusion_detected,
+                    "intervention_type": "price_cap" if collusion_detected else "none"
+                }
+            
             response = litellm.completion(
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],

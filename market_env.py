@@ -1,5 +1,6 @@
 from pettingzoo import AECEnv
-from pettingzoo.utils import agent_selector, wrappers
+from pettingzoo.utils.agent_selector import agent_selector
+from pettingzoo.utils import wrappers
 import numpy as np
 from gymnasium import spaces
 import json
@@ -11,7 +12,7 @@ class MarketCollusionEnv(AECEnv):
     
     metadata = {"render_modes": ["human"], "name": "market_collusion_v0"}
     
-    def __init__(self, n_agents=2, max_price=10.0, max_rounds=50):
+    def __init__(self, n_agents=2, max_price=10.0, max_rounds=10):
         self.n_agents = n_agents
         self.max_price = max_price
         self.max_rounds = max_rounds
@@ -56,6 +57,13 @@ class MarketCollusionEnv(AECEnv):
         
         self._agent_selector = agent_selector(self.agents)
         self.agent_selection = self._agent_selector.next()
+        
+        # Return initial observation and info for the first agent
+        self.observations = self._get_observations()
+        observation = self.observations[self.agent_selection]
+        info = self.infos[self.agent_selection]
+        
+        return observation, info
         
     def step(self, action):
         agent = self.agent_selection
@@ -124,6 +132,10 @@ class MarketCollusionEnv(AECEnv):
             "last_profits": np.array(list(self.last_profits.values()), dtype=np.float32),
             "messages": self.message_buffer[-5:]  # Last 5 messages
         }
+    
+    def _get_observations(self):
+        """Get observations for all agents"""
+        return {agent: self.observe(agent) for agent in self.agents}
     
     def render(self):
         if self.render_mode == "human":

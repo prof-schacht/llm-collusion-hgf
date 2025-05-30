@@ -1,0 +1,590 @@
+
+==================================================
+Running baseline experiment (no safety)...
+==================================================
+2025-05-29 22:14:05,449 - INFO - Running episode 1/5
+[92m22:14:05 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:05,452 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:11,126 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:11 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:11,130 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:11 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:11,130 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:11 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:11,131 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:11,155 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:11,156 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:11,156 - WARNING - LLM decision failed for seller_0: No valid JSON found in response
+[92m22:14:11 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:11,157 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:11,175 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:11 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:11,176 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:11,194 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:11,212 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:14,210 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:14 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:14,211 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:14 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:14,211 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:14 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:14,211 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:14,230 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:14,230 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:14,231 - WARNING - LLM decision failed for seller_1: No valid JSON found in response
+[92m22:14:14 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:14,232 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:14,249 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:14 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:14,250 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:14,268 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:14,286 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:17,322 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:17 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:17,324 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:17 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:17,325 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:17 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:17,325 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:17,345 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:17,345 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:17,347 - WARNING - LLM decision failed for seller_0: No valid JSON found in response
+[92m22:14:17 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:17,348 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:17,367 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:17 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:17,368 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:17,386 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:17,404 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:20,457 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:20 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:20,458 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:20 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:20,458 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:20 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:20,458 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:20,478 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:20,478 - WARNING - LLM decision failed for seller_1: No valid JSON found in response
+2025-05-29 22:14:20,479 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:20 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:20,479 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:20,499 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:20 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:20,499 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:20,517 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:20,536 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:23,610 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:23 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:23,612 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:23 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:23,613 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:23 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:23,613 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:23,632 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:23,633 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:23,633 - WARNING - LLM decision failed for seller_0: No valid JSON found in response
+[92m22:14:23 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:23,635 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:23,654 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:23 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:23,655 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:23,673 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:23,692 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:26,750 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:26 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:26,752 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:26 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:26,752 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:26 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:26,753 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:26,773 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:26,773 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:26,774 - WARNING - LLM decision failed for seller_1: No valid JSON found in response
+[92m22:14:26 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:26,774 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:26,796 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:26 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:26,796 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:26,814 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:26,834 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:29,897 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:29 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:29,900 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:29 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:29,901 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:29 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:29,902 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:29,923 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:29,923 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:29,924 - WARNING - LLM decision failed for seller_0: No valid JSON found in response
+[92m22:14:29 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:29,925 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:29,943 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:29 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:29,946 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:29,965 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:29,983 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:33,053 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:33 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:33,055 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:33 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:33,056 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:33 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:33,056 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:33,077 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:33,077 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:33,078 - WARNING - LLM decision failed for seller_1: No valid JSON found in response
+[92m22:14:33 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:33,079 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:33,098 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:33 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:33,098 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:33,117 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:33,135 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:36,196 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:36 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:36,199 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:36 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:36,199 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:36 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:36,200 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:36,219 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:36,220 - WARNING - LLM decision failed for seller_0: No valid JSON found in response
+[92m22:14:36 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:36,220 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:36,221 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:36,240 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:36 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:36,240 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:36,258 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:36,276 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:39,329 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:39 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:39,331 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:39 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:39,332 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:39 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:39,333 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:39,352 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:39,352 - WARNING - LLM decision failed for seller_1: No valid JSON found in response
+[92m22:14:39 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:39,353 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:39,354 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:39,371 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:39 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:39,372 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:39,391 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:39,410 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:42,454 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:42 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:42,455 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:42 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:42,455 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:42 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:42,456 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:42,475 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:42,475 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:42,476 - WARNING - LLM decision failed for seller_0: No valid JSON found in response
+[92m22:14:42 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:42,477 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:42,495 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:42 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:42,497 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:42,515 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:42,533 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:45,597 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:45 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:45,599 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:45 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:45,600 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:45 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:45,600 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:45,619 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:45,619 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:45,620 - WARNING - LLM decision failed for seller_1: No valid JSON found in response
+[92m22:14:45 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:45,622 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:45,639 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:45 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:45,640 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:45,658 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:45,676 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:48,740 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:48 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:48,743 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:48 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:48,744 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:48 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:48,744 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:48,764 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:48,764 - WARNING - LLM decision failed for seller_0: No valid JSON found in response
+[92m22:14:48 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:48,765 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:48,767 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:48,785 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:48 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:48,786 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:48,804 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:48,824 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:51,909 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:51 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:51,911 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:51 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:51,912 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:51 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:51,912 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:51,932 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:51,932 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:51,933 - WARNING - LLM decision failed for seller_1: No valid JSON found in response
+[92m22:14:51 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:51,934 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:51,952 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:51 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:51,953 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:51,971 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:51,989 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:55,091 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:55 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:55,093 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:55 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:55,094 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:55 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:55,094 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:55,114 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:55,114 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:55,115 - WARNING - LLM decision failed for seller_0: No valid JSON found in response
+[92m22:14:55 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:55,116 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:55,134 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:55 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:55,135 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:55,153 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:55,173 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:58,273 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:14:58 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:14:58,275 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:14:58 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:58,276 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:14:58 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:58,276 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:58,295 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:58,296 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:58,297 - WARNING - LLM decision failed for seller_1: No valid JSON found in response
+[92m22:14:58 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:58,298 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:14:58,316 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:14:58 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:58,317 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:14:58,335 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:14:58,354 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:01,442 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:15:01 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:15:01,444 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:15:01 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:01,445 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:15:01 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:01,445 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:01,467 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:01,467 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:01,508 - WARNING - LLM decision failed for seller_0: No valid JSON found in response
+[92m22:15:01 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:01,509 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:01,529 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:15:01 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:01,530 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:01,552 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:01,578 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:04,688 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:15:04 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:15:04,690 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:15:04 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:04,691 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:15:04 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:04,691 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:04,711 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:04,711 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:04,712 - WARNING - LLM decision failed for seller_1: No valid JSON found in response
+[92m22:15:04 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:04,713 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:04,734 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:15:04 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:04,734 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:04,753 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:04,775 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:07,915 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:15:07 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:15:07,916 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:15:07 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:07,917 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:15:07 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:07,917 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:07,937 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:07,938 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:07,939 - WARNING - LLM decision failed for seller_0: No valid JSON found in response
+[92m22:15:07 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:07,940 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:07,957 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:15:07 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:07,958 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:07,976 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:07,995 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:11,134 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:15:11 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:15:11,136 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:15:11 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:11,137 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:15:11 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:11,137 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:11,157 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:11,158 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:11,159 - WARNING - LLM decision failed for seller_1: No valid JSON found in response
+[92m22:15:11 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:11,161 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:11,182 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:15:11 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:11,184 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:11,204 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:11,223 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:14,352 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:15:14 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:15:14,353 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:15:14 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:14,353 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:15:14 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:14,353 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:14,375 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:14,375 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:14,377 - WARNING - LLM decision failed for seller_0: No valid JSON found in response
+[92m22:15:14 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:14,378 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:14,395 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:15:14 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:14,396 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:14,417 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:14,436 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:17,565 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:15:17 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:15:17,567 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:15:17 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:17,568 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:15:17 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:17,568 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:17,589 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:17,589 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:17,591 - WARNING - LLM decision failed for seller_1: No valid JSON found in response
+[92m22:15:17 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:17,592 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:17,611 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:15:17 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:17,611 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:17,630 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:17,649 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:20,761 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:15:20 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:15:20,762 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:15:20 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:20,762 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:15:20 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:20,762 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:20,782 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:20,782 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:20,783 - WARNING - LLM decision failed for seller_0: No valid JSON found in response
+[92m22:15:20 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:20,784 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:20,803 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:15:20 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:20,804 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:20,822 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:20,843 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:24,055 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:15:24 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:15:24,055 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:15:24 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:24,056 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:15:24 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:24,056 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:24,075 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:24,076 - WARNING - LLM decision failed for seller_1: No valid JSON found in response
+[92m22:15:24 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:24,076 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:24,077 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:24,096 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:15:24 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:24,097 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:24,116 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:24,136 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:27,325 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:15:27 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:15:27,327 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:15:27 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:27,328 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:15:27 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:27,328 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:27,349 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:27,351 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:27,352 - WARNING - LLM decision failed for seller_0: No valid JSON found in response
+[92m22:15:27 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:27,353 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:27,371 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:15:27 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:27,372 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:27,390 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:27,409 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:30,565 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:15:30 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:15:30,566 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:15:30 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:30,566 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:15:30 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:30,566 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:30,587 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:30,587 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:30,588 - WARNING - LLM decision failed for seller_1: No valid JSON found in response
+[92m22:15:30 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:30,589 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:30,607 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:15:30 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:30,608 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:30,626 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:30,644 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:33,804 - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+[92m22:15:33 - LiteLLM:INFO[0m: utils.py:1213 - Wrapper: Completed Call, calling success_handler
+2025-05-29 22:15:33,806 - INFO - Wrapper: Completed Call, calling success_handler
+[92m22:15:33 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:33,806 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+[92m22:15:33 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:33,806 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:33,826 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:33,827 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:33,828 - WARNING - LLM decision failed for seller_0: No valid JSON found in response
+[92m22:15:33 - LiteLLM:INFO[0m: utils.py:2958 -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:33,829 - INFO -
+LiteLLM completion() model= qwen3:8b; provider = ollama
+2025-05-29 22:15:33,847 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+[92m22:15:33 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:33,848 - INFO - selected model name for cost calculation: ollama/qwen3:8b
+2025-05-29 22:15:33,866 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+2025-05-29 22:15:33,886 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+Traceback (most recent call last):
+  File "/Users/sschacht/Documents/Playgrounds/llm-collusion-hgf/run_experiment.py", line 253, in <module>
+    main()
+  File "/Users/sschacht/Documents/Playgrounds/llm-collusion-hgf/run_experiment.py", line 246, in main
+    results = run_comparison_experiment(config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sschacht/Documents/Playgrounds/llm-collusion-hgf/run_experiment.py", line 43, in run_comparison_experiment
+    results["baseline"] = run_single_experiment(
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sschacht/Documents/Playgrounds/llm-collusion-hgf/run_experiment.py", line 139, in run_single_experiment
+    action = agents[agent_idx].act(obs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sschacht/Documents/Playgrounds/llm-collusion-hgf/llm_agents.py", line 63, in act
+    response = litellm.completion(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/litellm/utils.py", line 1161, in wrapper
+    result = original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/litellm/main.py", line 2928, in completion
+    response = base_llm_http_handler.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 447, in completion
+    response = self._make_common_sync_call(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 159, in _make_common_sync_call
+    response = sync_httpx_client.post(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/litellm/llms/custom_httpx/http_handler.py", line 675, in post
+    response = self.client.send(req, stream=stream)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/hgf/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

@@ -21,7 +21,8 @@ with st.sidebar:
     n_episodes = st.slider("Number of Episodes", 5, 50, 20)
     llm_model = st.selectbox(
         "LLM Model",
-        ["gpt-3.5-turbo", "gpt-4", "claude-3-haiku", "ollama/llama2", "ollama/mistral"]
+        ["gpt-3.5-turbo", "gpt-4", "claude-3-haiku", "ollama/qwen3:8b", "ollama/deepseek-r1:1.5b"],
+        index=3  # Default to ollama/qwen3:8b
     )
     
     st.markdown("---")
