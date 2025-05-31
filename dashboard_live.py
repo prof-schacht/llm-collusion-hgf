@@ -84,21 +84,23 @@ else:
             conversation_placeholder = st.empty()
     
     with col_right:
-        st.markdown("### 📈 Market Dynamics")
+        # Create static containers that won't fade
+        right_container = st.container()
         
-        # Create a placeholder for the chart
-        chart_placeholder = st.empty()
-        
-        st.markdown("### 🎯 Current Prices")
-        price_container = st.container()
-        price_placeholder = price_container.empty()
-        
-        st.markdown("### ⚡ Recent Events")
-        events_container = st.container(height=200)
-        events_placeholder = events_container.empty()
-        
-    # Initialize chart container reference
-    chart_container = chart_placeholder.container()
+        with right_container:
+            st.markdown("### 📈 Market Dynamics")
+            chart_container = st.container()
+            chart_placeholder = chart_container.empty()
+            
+            st.markdown("### 🎯 Current Prices")
+            price_placeholder = st.empty()
+            
+            st.markdown("### ⚡ Recent Events")
+            events_placeholder = st.empty()
+    
+    # Show initial states
+    price_placeholder.info("Prices will appear after first round...")
+    events_placeholder.info("Events will appear as simulation runs...")
     
     # Function to display conversation history
     def display_conversations():
@@ -159,19 +161,21 @@ else:
     # Update price chart
     def update_chart():
         if st.session_state.price_history:
-            # Update chart in the placeholder
-            with chart_placeholder.container():
-                df = pd.DataFrame(st.session_state.price_history)
+            # Create chart and display directly in placeholder
+            df = pd.DataFrame(st.session_state.price_history)
+            
+            fig = go.Figure()
+            
+            # Get unique traders
+            traders = set()
+            for prices in df['prices']:
+                traders.update(prices.keys())
                 
-                fig = go.Figure()
-                
-                # Get unique traders
-                traders = set()
-                for prices in df['prices']:
-                    traders.update(prices.keys())
+                # Define colors for traders
+                colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b']
                 
                 # Add line for each trader
-                for trader in sorted(traders):
+                for i, trader in enumerate(sorted(traders)):
                     prices = [p['prices'].get(trader, None) for p in st.session_state.price_history]
                     rounds = list(range(1, len(prices) + 1))  # Start from round 1
                     
@@ -180,7 +184,8 @@ else:
                         y=prices,
                         mode='lines+markers',
                         name=trader,
-                        line=dict(width=2),
+                        line=dict(width=3, color=colors[i % len(colors)]),
+                        marker=dict(size=8),
                         connectgaps=False
                     ))
                 
@@ -207,11 +212,23 @@ else:
                     height=300,
                     margin=dict(l=0, r=0, t=20, b=20),
                     showlegend=True,
-                    legend=dict(x=0, y=1)
+                    legend=dict(x=0, y=1),
+                    plot_bgcolor='white',
+                    paper_bgcolor='white',
+                    xaxis=dict(
+                        showgrid=True,
+                        gridcolor='lightgray',
+                        linecolor='black'
+                    ),
+                    yaxis=dict(
+                        showgrid=True,
+                        gridcolor='lightgray',
+                        linecolor='black'
+                    )
                 )
                 
-                # Use st.plotly_chart directly in the container
-                st.plotly_chart(fig, use_container_width=True, key=f"price_chart_{len(st.session_state.price_history)}")
+                # Display chart in the placeholder
+                chart_placeholder.plotly_chart(fig, use_container_width=True, key=f"price_chart_{st.session_state.round}")
     
     # Custom run function that captures agent thinking
     def run_round_with_streaming(orchestrator, round_num):
@@ -288,9 +305,19 @@ else:
         
         # Update price display and history
         market_state = orchestrator.market.get_state()
-        with price_placeholder.container():
-            for trader, price in market_state['prices'].items():
-                st.metric(trader, f"${price:.2f}")
+        
+        # Update price metrics using HTML for stability
+        if market_state['prices']:
+            price_html = '<div style="display: flex; justify-content: space-around; padding: 10px;">'
+            for trader, price in sorted(market_state['prices'].items()):
+                price_html += f'''
+                <div style="text-align: center; padding: 10px;">
+                    <div style="font-size: 0.9em; color: #666;">{trader}</div>
+                    <div style="font-size: 1.5em; font-weight: bold; color: #1f77b4;">${price:.2f}</div>
+                </div>
+                '''
+            price_html += '</div>'
+            price_placeholder.markdown(price_html, unsafe_allow_html=True)
         
         # Update price history immediately after trading phase
         if market_state['prices']:
@@ -300,12 +327,32 @@ else:
             })
             update_chart()
             
-        # Update recent events
-        with events_placeholder.container():
-            recent_decisions = [m for m in list(st.session_state.conversation_history)[-10:] 
-                              if m['type'] == 'decision']
-            for event in recent_decisions[-5:]:
-                st.caption(f"• {event['agent']}: {event['content'][:60]}...")
+        # Update recent events after each phase
+        def update_recent_events():
+            recent_items = list(st.session_state.conversation_history)[-15:]
+            display_items = []
+            
+            # Get recent decisions and messages
+            for item in reversed(recent_items):
+                if item['type'] in ['decision', 'message'] and len(display_items) < 5:
+                    display_items.append(item)
+            
+            # Build HTML for events to avoid flickering
+            events_html = '<div style="padding: 10px;">'
+            if display_items:
+                for event in display_items:
+                    if event['type'] == 'decision':
+                        events_html += f'<p style="margin: 5px 0;">🎯 <strong>{event["agent"]}</strong>: {event["content"][:50]}...</p>'
+                    elif event['type'] == 'message':
+                        events_html += f'<p style="margin: 5px 0;">💬 <strong>{event["agent"]}</strong>: <em>{event["content"][:50]}...</em></p>'
+            else:
+                events_html += '<p style="color: gray;">No recent events yet...</p>'
+            events_html += '</div>'
+            
+            events_placeholder.markdown(events_html, unsafe_allow_html=True)
+        
+        # Call update after trading
+        update_recent_events()
         
         # Phase 2: Assessment
         st.session_state.conversation_history.append({
@@ -353,6 +400,9 @@ else:
             
             display_conversations()
             time.sleep(0.5)
+        
+        # Update events after assessment
+        update_recent_events()
         
         # Phase 3: Governance
         if orchestrator.governor and alerts:
@@ -405,6 +455,9 @@ else:
                 })
             
             display_conversations()
+            
+            # Update events after governance
+            update_recent_events()
         
         # Complete round
         orchestrator.market.complete_round()
@@ -457,14 +510,32 @@ else:
         with col3:
             st.metric("Conversation Items", len(st.session_state.conversation_history))
 
-# Add CSS for better styling
+# Add CSS for better styling and prevent fading
 st.markdown("""
 <style>
+    /* Prevent fading on right column */
+    section[data-testid="stSidebar"] + div > div > div > div > div:last-child {
+        opacity: 1 !important;
+        transition: none !important;
+    }
+    
+    /* Ensure containers stay visible */
+    .element-container {
+        opacity: 1 !important;
+    }
+    
+    /* Better contrast for dark mode */
     .stContainer > div {
         background-color: white;
     }
+    
     div[data-testid="stMetricValue"] {
         font-size: 1.2em;
+    }
+    
+    /* Keep plotly charts visible */
+    .js-plotly-plot {
+        opacity: 1 !important;
     }
 </style>
 """, unsafe_allow_html=True)
