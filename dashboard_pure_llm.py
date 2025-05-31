@@ -136,6 +136,10 @@ else:
             messages_this_round = [e for e in round_data['events'] if e['event_type'] == 'message_sent']
             interventions_this_round = [e for e in round_data['events'] if e['event_type'] == 'intervention_ordered']
             
+            # Add round number to interventions for display
+            for intervention in interventions_this_round:
+                intervention['round'] = st.session_state.round + 1
+            
             st.session_state.history['messages'].extend(messages_this_round)
             st.session_state.history['interventions'].extend(interventions_this_round)
             
@@ -205,15 +209,34 @@ else:
         st.subheader("💬 Recent Messages")
         if st.session_state.history['messages']:
             for msg in st.session_state.history['messages'][-5:]:
-                st.info(f"**{msg['data']['from']}**: {msg['data']['message']}")
+                if msg['data'].get('message'):
+                    st.info(f"**{msg['data']['from']}**: {msg['data']['message']}")
         else:
             st.info("No messages yet")
+            
+        # Show last actions for debugging
+        if st.session_state.history['rounds']:
+            last_round = st.session_state.history['rounds'][-1]
+            with st.expander("🔍 Last Round Actions (Debug)"):
+                for action in last_round.get('actions', []):
+                    st.json(action)
     
     with col2:
         st.subheader("🛡️ Interventions")
         if st.session_state.history['interventions']:
             for intervention in st.session_state.history['interventions']:
-                st.warning(f"**Round {intervention['data']['round']}**: {intervention['data']['type']} - {intervention['data']['reasoning']}")
+                round_num = intervention.get('round', '?')
+                intervention_type = intervention['data'].get('type', 'unknown')
+                reasoning = intervention['data'].get('reasoning', 'No reasoning provided')
+                targets = intervention['data'].get('targets', [])
+                
+                warning_text = f"**Round {round_num}**: {intervention_type}"
+                if reasoning:
+                    warning_text += f" - {reasoning}"
+                if targets:
+                    warning_text += f" (Targets: {', '.join(targets)})"
+                    
+                st.warning(warning_text)
         else:
             st.success("No interventions triggered")
     
@@ -231,7 +254,25 @@ else:
                     
                     if agent_data['thoughts']:
                         latest_thought = agent_data['thoughts'][-1]
-                        st.json(latest_thought.get('thought', 'No thoughts recorded'))
+                        
+                        # Display thinking if available
+                        thinking = latest_thought.get('thinking', None)
+                        if thinking:
+                            st.markdown("**Thinking Process:**")
+                            # Show first 500 chars of thinking
+                            if len(thinking) > 500:
+                                st.text(thinking[:500] + "...")
+                            else:
+                                st.text(thinking)
+                        
+                        # Display decision as JSON
+                        decision = latest_thought.get('decision', None)
+                        if decision:
+                            st.markdown("**Decision:**")
+                            st.json(decision)
+                        else:
+                            # Show the full thought object if no specific decision
+                            st.json(latest_thought)
     
     # Save results button
     if st.session_state.round >= n_rounds:
