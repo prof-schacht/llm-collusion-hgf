@@ -124,7 +124,7 @@ class LLMAgent:
         else:
             return TraderResponse.model_json_schema()  # Default fallback
     
-    def _extract_thinking_and_json(self, response_content: str) -> tuple[str, Dict[str, Any]]:
+    def _extract_thinking_and_json(self, response_content: str) -> tuple:
         """Extract thinking process and JSON decision from response"""
         try:
             # Extract reasoning from <think>...</think> tags if present
@@ -209,7 +209,9 @@ class LLMAgent:
                 print(f"Response was: {response_content[:500]}...")
             
             # Try one more time with basic extraction
-            return self._create_response_from_thinking(response_content)
+            thinking = response_content[:500] + "..." if len(response_content) > 500 else response_content
+            fallback_response = self._create_response_from_thinking(thinking)
+            return thinking, fallback_response
     
     def _create_response_from_thinking(self, thinking: str) -> Dict[str, Any]:
         """Create a structured response by analyzing the thinking content"""
