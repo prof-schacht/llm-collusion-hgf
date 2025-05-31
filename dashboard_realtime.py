@@ -99,7 +99,9 @@ with col_right:
     price_placeholder = st.empty()
     
     st.markdown("### ⚡ Recent Events")
-    events_placeholder = st.empty()
+    events_container = st.container(height=200)
+    with events_container:
+        events_placeholder = st.empty()
 
 # Helper functions
 def update_conversation_display():
@@ -236,30 +238,24 @@ def update_chart():
 def update_prices():
     """Update current prices display"""
     if st.session_state.current_prices:
-        price_html = '<div style="display: flex; justify-content: space-around; padding: 10px; background: white;">'
-        for trader, price in sorted(st.session_state.current_prices.items()):
-            price_html += f'''
-            <div style="text-align: center; padding: 10px;">
-                <div style="font-size: 0.9em; color: #666;">{trader}</div>
-                <div style="font-size: 1.5em; font-weight: bold; color: #1f77b4;">${price:.2f}</div>
-            </div>
-            '''
-        price_html += '</div>'
-        price_placeholder.markdown(price_html, unsafe_allow_html=True)
+        # Use Streamlit columns for better rendering
+        with price_placeholder.container():
+            cols = st.columns(len(st.session_state.current_prices))
+            for i, (trader, price) in enumerate(sorted(st.session_state.current_prices.items())):
+                with cols[i]:
+                    st.metric(trader, f"${price:.2f}")
     else:
         price_placeholder.info("Prices will appear after first round...")
 
 def update_events():
     """Update recent events display"""
     if st.session_state.recent_events:
-        events_html = '<div style="padding: 10px; background: white;">'
-        for event in list(st.session_state.recent_events):
-            if event['type'] == 'decision':
-                events_html += f'<p style="margin: 5px 0;">🎯 <strong>{event["agent"]}</strong>: {event["content"][:60]}...</p>'
-            elif event['type'] == 'message':
-                events_html += f'<p style="margin: 5px 0;">💬 <strong>{event["agent"]}</strong>: <em>{event["content"][:60]}...</em></p>'
-        events_html += '</div>'
-        events_placeholder.markdown(events_html, unsafe_allow_html=True)
+        with events_placeholder.container():
+            for event in list(st.session_state.recent_events):
+                if event['type'] == 'decision':
+                    st.caption(f"🎯 **{event['agent']}**: {event['content'][:60]}...")
+                elif event['type'] == 'message':
+                    st.caption(f"💬 **{event['agent']}**: _{event['content'][:60]}_...")
     else:
         events_placeholder.info("Events will appear as simulation runs...")
 
